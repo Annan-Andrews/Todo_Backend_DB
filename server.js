@@ -74,10 +74,10 @@ app.delete("/task/:id", (req, res) =>{
 })
 
 
-app.put("/task/:id", (req, res) => {
+app.put("/task/:id", async (req, res) => {
   const id = req.params.id
   const updatedTask = req.body
-  Task.findByIdAndUpdate(id, updatedTask)
+  await Task.findByIdAndUpdate(id, updatedTask)
   .then(data =>{
     if(data){
       res.send("Task updated successfully")
