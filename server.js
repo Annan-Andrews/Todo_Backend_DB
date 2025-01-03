@@ -58,7 +58,7 @@ app.post("/", (req, res)=>{
 
 
 app.delete("/task/:id", (req, res) =>{
-  Task.findOneAndDelete(req.params.id)
+  Task.findByIdAndDelete(req.params.id)
   .then(data =>{
     if(data){
       res.send("Deleted")
