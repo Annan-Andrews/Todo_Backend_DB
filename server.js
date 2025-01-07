@@ -6,6 +6,7 @@ const dotenv = require('dotenv')
 dotenv.config({path: './.env'})
 
 const dbPassword = process.env.DB_PASSWORD 
+const port = process.env.PORT
   
 
 mongoose.connect(`mongodb+srv://annan:${dbPassword}@main.uu4y6.mongodb.net/?retryWrites=true&w=majority&appName=main`)
@@ -93,6 +94,6 @@ app.put("/task/:id", (req, res) => {
 
 })  
 
-app.listen(4000, ()=>{
+app.listen(port, ()=>{
   console.log("Server Started on port 4000")
 })
