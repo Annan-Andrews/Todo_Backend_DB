@@ -95,5 +95,5 @@ app.put("/task/:id", (req, res) => {
 })  
 
 app.listen(port, ()=>{
-  console.log("Server Started on port 4000")
+  console.log(`Server Started on ${port}`)
 })
